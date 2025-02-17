@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glotech</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="images/glotech.png" class="logo" alt="">
+        <div class="content">
+            <p>Website under maintenance</p>
+            <h1>We're <span>launching</span> soon</h1>
+            <div class="launch-time">
+                <div>
+                    <p id="days">00</p>
+                    <span>Days</span>
+                </div>
+                <div >
+                    <p id="hours">00</p>
+                    <span>Hours</span>
+                </div>
+                <div>
+                    <p id="minutes">00</p>
+                    <span>Minutes</span>
+                </div>
+                <div >
+                    <p id="seconds">00</p>
+                    <span>Seconds</span>
+                </div>
+            </div>
+            <button><span></span>Learn more</button>
+        </div>
+        <img src="images/rocket.png" class="rocket" alt="">
+    </div>
+
+    <script>
+          // Set the target date and time
+          const targetDate = new Date("March 1, 2025 00:00:00").getTime();
+
+         // Update the countdown every second
+          const countdown = setInterval(() => {
+         // Get the current date and time
+         const now = new Date().getTime();
+
+        // Calculate the remaining time
+         const remainingTime = targetDate - now;
+
+    // Calculate days, hours, minutes, and seconds
+    const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+    // Display the result in the HTML
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
+
+    // If the countdown is over, display a message
+    if (remainingTime < 0) {
+        clearInterval(countdown);
+        document.querySelector(".launch-time").innerHTML = "<p>Launched!</p>";
+    }
+}, 1000); 
+</script>
+</body>
+</html>

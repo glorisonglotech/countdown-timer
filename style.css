@@ -1,0 +1,94 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    background:linear-gradient(rgba(0,0,0,0.5),rgb(73, 100, 100)), url("images/bg.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.logo{
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.content{
+    position: absolute;
+    color: white;
+    top: 40%;
+    margin: 10px 40px;
+}
+.content p{
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+.content h1{
+    font-size: 70px;
+}
+.content h1 span{
+    color: cyan;
+}
+.launch-time{
+    display: flex;
+}
+.launch-time div{
+    flex-basis: 100px;
+}
+.launch-time div p{
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+.launch-time div span{
+    font-size: 20px;
+    display: block;
+}
+.content button{
+    background: transparent;
+    margin:  30px;
+    padding: 15px 30px;
+    border: 2px solid cyan;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+.content button span{
+    background: cyan;
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    top: 0;
+    left: 0;
+    border-radius: 7px;
+    z-index: -1;
+}
+.content button:hover span{
+    width: 100%;
+    transition: 0.5s;
+}
+.content button:hover{
+    color: black;
+}
+.rocket{
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+    height: 100px;
+    animation: rocket 5s infinite;
+}
+@keyframes rocket{
+    0%{
+        bottom: 0;
+        opacity: 0;
+    }
+    100%{
+        bottom: 101%;
+        opacity: 1;
+    }
+}
